@@ -6213,8 +6213,6 @@ document.addEventListener('DOMContentLoaded', function() {
     initSettingsFromUI();
     setupEventListeners();
     initRenderer();
-    // Render the molecule with initial settings
-    setTimeout(() => renderMolecule(), 100);
 });
 
 // Initialize settings from UI values on page load
@@ -7374,7 +7372,7 @@ window.removePeriodicity = removePeriodicity;
                         // user loads a file (or external code sets window.ALLOW_EMBEDDED_MOLECULE = true).
                         (function() {
                             const originalSet = setMolecularData;
-                            window.ALLOW_EMBEDDED_MOLECULE = true; // Allow initial embedded molecule to load
+                            window.ALLOW_EMBEDDED_MOLECULE = false; // safe default: do not auto-load embedded data
                             window.setMolecularData = function(data) {
                                 if (window.ALLOW_EMBEDDED_MOLECULE) {
                                     return originalSet(data);
