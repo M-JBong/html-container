@@ -11,7 +11,7 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex justify-between items-center h-16">
         <div class="flex items-center gap-6">
-          <a href="https://kangmg.github.io/html-container/" class="text-xl font-bold text-gray-900 hover:text-gray-600 transition-colors">
+          <a href="https://m-jbong.github.io/html-container/" class="text-xl font-bold text-gray-900 hover:text-gray-600 transition-colors">
             Home
           </a>
           <div class="relative">
@@ -51,7 +51,7 @@
 
     async function fetchPagesFromGitHub() {
       try {
-        const response = await fetch('https://api.github.com/repos/kangmg/html-container/contents/pages');
+        const response = await fetch('https://api.github.com/repos/M-JBong/html-container/contents/pages');
         if (!response.ok) throw new Error('Failed to fetch pages');
         
         const files = await response.json();
@@ -210,7 +210,7 @@
 
     document.addEventListener('click', (e) => {
       const link = e.target.closest('a');
-      if (link && link.href.startsWith(window.location.origin) && !link.href.includes('kangmg.github.io/html-container/')) {
+      if (link && link.href.startsWith(window.location.origin) && !link.href.includes('m-jbong.github.io/html-container/')) {
         return; // Let Home link work normally
       }
       if (link && link.href.includes(BASE_PATH) && !link.id) {
