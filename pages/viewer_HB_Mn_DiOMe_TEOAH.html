@@ -6213,6 +6213,8 @@ document.addEventListener('DOMContentLoaded', function() {
     initSettingsFromUI();
     setupEventListeners();
     initRenderer();
+    // Render the molecule with initial settings
+    setTimeout(() => renderMolecule(), 100);
 });
 
 // Initialize settings from UI values on page load
@@ -6225,6 +6227,11 @@ function initSettingsFromUI() {
     const bondThicknessSlider = document.getElementById('bond-thickness');
     if (bondThicknessSlider) {
         settings.bondThickness = parseFloat(bondThicknessSlider.value);
+    }
+    
+    const hBondThresholdSlider = document.getElementById('h-bond-threshold');
+    if (hBondThresholdSlider) {
+        settings.hBondThreshold = parseFloat(hBondThresholdSlider.value);
     }
     
     const atomSizeSlider = document.getElementById('atom-size');
@@ -6265,6 +6272,11 @@ function initSettingsFromUI() {
     const showBondCheckbox = document.getElementById('show-bond');
     if (showBondCheckbox) {
         settings.showBond = showBondCheckbox.checked;
+    }
+    
+    const showHBondCheckbox = document.getElementById('show-h-bond');
+    if (showHBondCheckbox) {
+        settings.showHBond = showHBondCheckbox.checked;
     }
     
     const showShadingCheckbox = document.getElementById('show-shading');
